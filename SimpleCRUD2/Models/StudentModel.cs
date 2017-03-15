@@ -10,7 +10,14 @@ namespace SimpleCRUD2.Models
     {
         [Required(ErrorMessage ="Student Name is Required.")]
         public string Name { get; set; }
+
         [Required(ErrorMessage = "Class Type is Required.")]
         public string Class { get; set; }
+
+        [Required(ErrorMessage = "Age is Required.")]
+        public string Age { get; set; }
+
+        public string Experience { get; set; }
+
     }
 }
