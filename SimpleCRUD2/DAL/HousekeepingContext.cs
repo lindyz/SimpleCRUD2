@@ -20,9 +20,5 @@ namespace SimpleCRUD2.DAL
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
-        internal void SaveChanges()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

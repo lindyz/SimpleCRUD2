@@ -17,7 +17,7 @@ namespace SimpleCRUD2
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 //changed controller to back to Home - and changed back to Index
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Person", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
