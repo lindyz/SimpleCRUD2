@@ -9,7 +9,7 @@ namespace SimpleCRUD2.Models
     {
         public int ChoreID { get; set; }
         public int DayID { get; set; }
-        public int PersonID { get; set; }
+        public int? PersonID { get; set; }
 
 
         public virtual Day Day { get; set; }

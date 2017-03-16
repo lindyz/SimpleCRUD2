@@ -14,9 +14,9 @@ namespace SimpleCRUD2.DAL
         {
             var persons = new List<Person>
             {
-            new Person{FirstMidName="Lindy"},
-            new Person{FirstMidName="Jason"},
-            new Person{FirstMidName="Baron"},
+            new Person{FirstName="Lindy"},
+            new Person{FirstName="Jason"},
+            new Person{FirstName="Baron"},
             };
             persons.ForEach(s => context.Persons.Add(s));
             context.SaveChanges();

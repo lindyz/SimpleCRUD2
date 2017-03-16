@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using SimpleCRUD2.Models;
+using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace SimpleCRUD2.DAL
 {
@@ -23,7 +22,7 @@ namespace SimpleCRUD2.DAL
 
         internal void SaveChanges()
         {
-            throw new NotImplementedException();
+            throw new System.NotImplementedException();
         }
     }
 }
