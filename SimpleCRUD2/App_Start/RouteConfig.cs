@@ -16,8 +16,8 @@ namespace SimpleCRUD2
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                //changed controller to student from Home - I kept the index the same
-                defaults: new { controller = "Student", action = "Student", id = UrlParameter.Optional }
+                //changed controller to back to Home - and changed Index back
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
