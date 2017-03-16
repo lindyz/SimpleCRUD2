@@ -16,7 +16,8 @@ namespace SimpleCRUD2.Controllers
         private HousekeepingContext db = new HousekeepingContext();
 
         // GET: Person - this gets a list of people who are available for chores
-        public ActionResult Index()
+        public ActionResult Person
+            ()
         {
             return View(db.Persons.ToList());
         }
