@@ -27,7 +27,7 @@ namespace SimpleCRUD2.Controllers
         public ActionResult Student(StudentModel obj)
         {
 
-            ViewBag.Msg="The Student Named "+obj.Name+" is in class "+obj.Class;
+            ViewBag.Msg="The Family Memeber Named "+obj.Name+" is assigned to "+obj.Chore+" the "+obj.Room+" on "+obj.Day;
 
             return View();
 
