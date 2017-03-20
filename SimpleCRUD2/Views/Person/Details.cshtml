@@ -17,7 +17,29 @@
         <dd>
             @Html.DisplayFor(model => model.FirstMidName)
         </dd>
-
+        <dt>
+            @Html.DisplayNameFor(model => model.Chores)
+        </dt>
+        <dd>
+            @*to display the list, it should loop through the chore list and show chores for each person when you click on their name*@
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Chore</th>
+                </tr>
+                @foreach (var item in Model.Chores)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Person.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Day)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
     </dl>
 </div>
 <p>
