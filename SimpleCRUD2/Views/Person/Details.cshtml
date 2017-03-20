@@ -11,11 +11,11 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.FirstMidName)
+            @Html.DisplayNameFor(model => model.FirstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FirstMidName)
+            @Html.DisplayFor(model => model.FirstName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Chores)
@@ -31,7 +31,7 @@
                 {
                     <tr>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Person.Title)
+                            @Html.DisplayFor(modelItem => item.Person)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Day)
@@ -43,6 +43,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PersonID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
