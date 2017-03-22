@@ -79,7 +79,7 @@ namespace SimpleCRUD2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,FirstMidName")] Person person)
+        public ActionResult Edit([Bind(Include = "ID,FirstName")] Person person)
         {
             if (ModelState.IsValid)
             {
