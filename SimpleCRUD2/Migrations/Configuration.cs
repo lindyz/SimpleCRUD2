@@ -19,13 +19,13 @@ namespace SimpleCRUD2.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data. E.g.
             //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.People.AddOrUpdate(
+              p => p.FullName,
+              new Person { Name = "" },
+              new Person { Name = "Brice Lambson" },
+              new Person { Name = "Rowan Miller" }
+            );
+
         }
     }
 }

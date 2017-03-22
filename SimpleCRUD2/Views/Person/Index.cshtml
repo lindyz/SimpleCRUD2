@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Welcome to the Housekeeping Chores List</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -22,6 +22,8 @@
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
+
+        @*this will give me the ability to edit/delete the person*@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.PersonID }) |
             @Html.ActionLink("Details", "Details", new { id=item.PersonID }) |

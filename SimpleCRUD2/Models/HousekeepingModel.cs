@@ -9,11 +9,12 @@
 //{
    
 
-//    public class StudentModel
+//    public class HousekeepingModel
 //    {
-//        public int StudentID { get; set; }
+//        public int PersonID { get; set; }
+
 //        [Required(ErrorMessage ="Name is Required.")]
-//        public string Name { get; set; }
+//        public string FirstName { get; set; }
 
 //        [Required(ErrorMessage = "Chore Type is Required.")]
 //        public string Chore { get; set; }
@@ -25,9 +26,9 @@
 
 //    }
 
-//    class StudentContext : DbContext
+//    class HousekeepingContext : DbContext
 //    {
-//        public DbSet<StudentModel> Students { get; set; }
+//        public DbSet<HousekeepingModel> Person { get; set; }
 //    }
 
 //}
