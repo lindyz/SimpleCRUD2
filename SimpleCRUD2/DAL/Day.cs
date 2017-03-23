@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SimpleCRUD2.Models
+namespace SimpleCRUD2.DAL
 {
     public class Day
     {

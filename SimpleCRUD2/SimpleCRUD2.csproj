@@ -125,7 +125,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="DAL\Chore.cs" />
+    <Compile Include="DAL\Day.cs" />
     <Compile Include="Models\HousekeepingModel.cs" />
+    <Compile Include="DAL\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

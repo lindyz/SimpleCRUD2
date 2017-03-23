@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SimpleCRUD2.Models
+namespace SimpleCRUD2.DAL
 {
     public class Chore
     {

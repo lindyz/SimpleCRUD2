@@ -6,6 +6,8 @@ namespace SimpleCRUD2.DAL
 {
     public class HousekeepingContext : DbContext
     {
+        internal object People;
+
         //the name of the connection string passed to the constructor
         public HousekeepingContext() : base("HousekeepingContext")
         {

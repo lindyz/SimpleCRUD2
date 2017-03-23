@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SimpleCRUD2.Models
+namespace SimpleCRUD2.DAL
 {
     public class Person
     {
+        internal string Name;
+
         public int PersonID { get; set; }
         public string FirstName { get; set; }
 
