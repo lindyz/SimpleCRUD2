@@ -13,7 +13,10 @@ namespace SimpleCRUD2.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(SimpleCRUD2.DAL.HousekeepingContext context);
+        protected override void Seed(SimpleCRUD2.DAL.HousekeepingContext context)
+        {
+
+        }
     }
 
     //    {

@@ -18,7 +18,11 @@ namespace SimpleCRUD2.Controllers
         // GET: Person - this gets a list of people who are available for chores
         public ActionResult Index()
         {
-            return View(db.Persons.ToList());
+
+            var model = new HousekeepingModel();
+            model.People = db.Persons.ToList();
+            
+            return View(model);
         }
 
         // GET: Person/Details/5
@@ -47,7 +51,7 @@ namespace SimpleCRUD2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,FirstMidName")] Person person)
+        public ActionResult Create([Bind(Include = "PersonID,FirstName")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +83,7 @@ namespace SimpleCRUD2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ID,FirstName")] Person person)
+        public ActionResult Edit([Bind(Include = "PersonID,FirstName")] Person person)
         {
             if (ModelState.IsValid)
             {

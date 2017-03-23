@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
+using SimpleCRUD2.DAL;
 
 namespace SimpleCRUD2.Models
 {
@@ -19,16 +20,14 @@ namespace SimpleCRUD2.Models
         [Required(ErrorMessage = "Chore Type is Required.")]
         public string Chore { get; set; }
 
-        [Required(ErrorMessage = "Room is Required.")]
-        public string Room { get; set; }
+        //[Required(ErrorMessage = "Room is Required.")]
+        //public string Room { get; set; }
 
         public string Day { get; set; }
 
+        public List<Person> People { get; set; }
     }
 
-    class HousekeepingContext : DbContext
-    {
-        public DbSet<HousekeepingModel> Person { get; set; }
-    }
+  
 
 }

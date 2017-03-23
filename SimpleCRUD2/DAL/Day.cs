@@ -9,7 +9,6 @@ namespace SimpleCRUD2.DAL
         public int DayID { get; set; }
         public string Name { get; set; }
 
-
         public virtual ICollection<Chore> Chores { get; set; }
     }
 }
