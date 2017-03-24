@@ -20,8 +20,8 @@ namespace SimpleCRUD2.Controllers
         {
 
             var model = new HousekeepingModel();
-            model.People = db.Persons.ToList();
-            
+            model.People =  new SelectList(db.Persons.ToList(), "PersonID", "FirstName");
+
             return View(model);
         }
 

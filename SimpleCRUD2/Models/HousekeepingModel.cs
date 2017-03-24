@@ -5,6 +5,7 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using SimpleCRUD2.DAL;
+using System.Web.Mvc;
 
 namespace SimpleCRUD2.Models
 {
@@ -25,7 +26,7 @@ namespace SimpleCRUD2.Models
 
         public string Day { get; set; }
 
-        public List<Person> People { get; set; }
+        public IEnumerable<SelectListItem> People { get; set; }
     }
 
   
