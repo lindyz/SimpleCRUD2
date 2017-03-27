@@ -20,7 +20,10 @@ namespace SimpleCRUD2.Controllers
         {
 
             var model = new HousekeepingModel();
-            model.People =  new SelectList(db.Persons.ToList(), "PersonID", "FirstName");
+            model.People = new SelectList(db.Persons.ToList(), "PersonID", "FirstName");
+            model.People = new SelectList(db.Persons.ToList(), "ChoreID", "Chore");
+            model.People = new SelectList(db.Persons.ToList(), "DayID", "Day");
+
 
             return View(model);
         }
@@ -129,14 +132,14 @@ namespace SimpleCRUD2.Controllers
             base.Dispose(disposing);
         }
 
-        [HttpPost]
-        public ActionResult Person(HousekeepingModel obj)
-        {
+        //[HttpPost]
+        //public ActionResult Person(HousekeepingModel obj)
+        //{
 
-            ViewBag.Msg = "The Family Memeber Named " + obj.FirstName + " is assigned to " + obj.Chore + " on " + obj.Day;
+        //    ViewBag.Msg = "The Family Memeber Named " + obj.FirstName + " is assigned to " + obj.Chore + " on " + obj.Day;
 
-            return View();
+        //    return View();
 
-        }
+        //}
     }
 }
