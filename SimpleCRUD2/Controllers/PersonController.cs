@@ -128,5 +128,15 @@ namespace SimpleCRUD2.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [HttpPost]
+        public ActionResult Person(HousekeepingModel obj)
+        {
+
+            ViewBag.Msg = "The Family Memeber Named " + obj.FirstName + " is assigned to " + obj.Chore + " on " + obj.Day;
+
+            return View();
+
+        }
     }
 }
