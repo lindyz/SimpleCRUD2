@@ -2,6 +2,7 @@ using System;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using SimpleCRUD2.DAL;
 
 namespace SimpleCRUD2.Migrations
 {
@@ -20,13 +21,13 @@ namespace SimpleCRUD2.Migrations
     }
 }
 
-    //    {
-    //        //  This method will be called after migrating to the latest version.
+//    {
+//        //  This method will be called after migrating to the latest version.
 
 //        //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
 //        //  to avoid creating duplicate seed data. E.g.
 //        //
-//    context.people.addorupdate(
+//context.people.addorupdate(
 //          p => p.firstname,
 //          new person { name = "lindy" },
 //          new person { name = "jason" },
