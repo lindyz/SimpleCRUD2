@@ -10,7 +10,7 @@ namespace SimpleCRUD2.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(SimpleCRUD2.DAL.HousekeepingContext context)
