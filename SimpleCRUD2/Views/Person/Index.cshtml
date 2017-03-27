@@ -6,7 +6,7 @@
 
 <h2>Welcome to the Housekeeping Chores List</h2>
 
-@Html.DropDownListFor(m => m.PersonID, Model.People)
+@*@Html.DropDownListFor(m => m.PersonID, Model.People)*@
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -32,21 +32,21 @@
 
    <tr>
         <td>
-            @Html.DisplayFor(model => model.FirstName)
+            @Html.DisplayFor(m => m.PersonID, Model.People)
         </td>
        <td>
-           @Html.DisplayFor(model => model.Chore)
+           @Html.DisplayFor(m => m.Chore, Model.People)
        </td>
        <td>
-           @Html.DisplayFor(model => model.Day)
+           @Html.DisplayFor(m => m.Day, Model.People)
        </td>
 
 
         @*this will give me the ability to edit/delete the person*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id= Model.PersonID }) |
-            @Html.ActionLink("Details", "Details", new { id= Model.PersonID }) |
-            @Html.ActionLink("Delete", "Delete", new { id= Model.PersonID })
+            @Html.ActionLink("Edit", "Edit", new { id= Model.People }) |
+            @Html.ActionLink("Details", "Details", new { id= Model.People }) |
+            @Html.ActionLink("Delete", "Delete", new { id= Model.People })
         </td>
     </tr>
 
