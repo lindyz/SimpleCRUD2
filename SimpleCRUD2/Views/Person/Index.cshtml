@@ -30,25 +30,27 @@
         <th></th>
     </tr>
 
+    @foreach (var item in Model.People)
+    {
    <tr>
         <td>
-            @Html.DisplayFor(m => m.PersonID, Model.People)
+            @Html.DisplayFor(model => model.Chore)
         </td>
        <td>
-           @Html.DisplayFor(m => m.Chore, Model.People)
+           @Html.DisplayFor(model => model.Chore)
        </td>
        <td>
-           @Html.DisplayFor(m => m.Day, Model.People)
+           @Html.DisplayFor(model => model.Day)
        </td>
 
 
         @*this will give me the ability to edit/delete the person*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id= Model.People }) |
-            @Html.ActionLink("Details", "Details", new { id= Model.People }) |
-            @Html.ActionLink("Delete", "Delete", new { id= Model.People })
+            @Html.ActionLink("Edit", "Edit", new { id = Model.People }) |
+            @Html.ActionLink("Details", "Details", new { id = Model.People }) |
+            @Html.ActionLink("Delete", "Delete", new { id = Model.People })
         </td>
     </tr>
-
+    }
 
 </table>
