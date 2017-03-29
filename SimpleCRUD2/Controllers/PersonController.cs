@@ -15,7 +15,7 @@ namespace SimpleCRUD2.Controllers
     {
         private HousekeepingContext db = new HousekeepingContext();
 
-        // GET: Person - this gets a list of people who are available for chores
+        // GET: Person - 
         public ActionResult Index()
         {
 
@@ -26,6 +26,21 @@ namespace SimpleCRUD2.Controllers
 
 
             return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Add(string FirstName, string Chore, string Day)
+        {
+            //string FirstName = Request.Form["FirstName"];
+            //string Chore = Request.Form["Chore"];
+            //string Day = Request.Form["Day"];
+
+            ViewBag.FirstName = FirstName;
+            ViewBag.Chore = Chore;
+            ViewBag.Day = Day;
+
+
+            return View();
         }
 
         // GET: Person/Details/5
@@ -49,12 +64,14 @@ namespace SimpleCRUD2.Controllers
             return View();
         }
 
+      
+
         // POST: Person/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PersonID,FirstName")] Person person)
+        public ActionResult Create([Bind(Include = "FirstName, Chore, Day")] Person person)
         {
             if (ModelState.IsValid)
             {

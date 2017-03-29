@@ -30,11 +30,11 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model.People)
-    {
+    @*@foreach (var item in Model.People)
+    {*@
    <tr>
         <td>
-            @Html.DisplayFor(model => model.Chore)
+            @Html.DisplayFor(model => model.FirstName)
         </td>
        <td>
            @Html.DisplayFor(model => model.Chore)
@@ -51,6 +51,6 @@
             @Html.ActionLink("Delete", "Delete", new { id = Model.People })
         </td>
     </tr>
-    }
+    @*}*@
 
 </table>
