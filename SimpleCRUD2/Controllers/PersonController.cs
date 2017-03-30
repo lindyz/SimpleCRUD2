@@ -14,13 +14,14 @@ namespace SimpleCRUD2.Controllers
     public class PersonController : Controller
     {
         private HousekeepingContext db = new HousekeepingContext();
+        //private Task person;
 
         // GET: Person - 
         public ActionResult Index()
         {
 
             var model = new HousekeepingModel();
-            model.People = new SelectList(db.Tasks.ToList(), "PersonID", "FirstName");
+            model.Tasks = db.Tasks.ToList();
             //model.People = new SelectList(db.Persons.ToList(), "ChoreID", "Chore");
             //model.People = new SelectList(db.Persons.ToList(), "DayID", "Day");
 
@@ -90,12 +91,12 @@ namespace SimpleCRUD2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            person = db.Tasks.Find(id);
-            if (task == null)
+            var myTask = db.Tasks.Find(id);
+            if (myTask == null)
             {
                 return HttpNotFound();
             }
-            return View(person);
+            return View();
         }
 
         // POST: Person/Edit/5

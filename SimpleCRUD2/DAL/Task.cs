@@ -7,7 +7,7 @@ namespace SimpleCRUD2.DAL
 {
     public class Task
     {
-        public int ChoreID { get; set; }
+        public int TaskID { get; set; }
         public string Name { get; set; }
         public string Chore { get; set; }
         public string Day { get; set; }

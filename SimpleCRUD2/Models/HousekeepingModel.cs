@@ -13,10 +13,10 @@ namespace SimpleCRUD2.Models
 
     public class HousekeepingModel
     {
-        public int PersonID { get; set; }
+        public int TaskID { get; set; }
 
         [Required(ErrorMessage = "Name is Required.")]
-        public string FirstName { get; set; }
+        public string Name { get; set; }
 
         [Required(ErrorMessage = "Chore Type is Required.")]
         public string Chore { get; set; }
@@ -26,7 +26,7 @@ namespace SimpleCRUD2.Models
 
         public string Day { get; set; }
 
-        public IEnumerable<SelectListItem> People { get; set; }
+        public List<SimpleCRUD2.DAL.Task> Tasks { get; set; }
     }
 
   
