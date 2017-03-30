@@ -20,9 +20,9 @@ namespace SimpleCRUD2.Controllers
         {
 
             var model = new HousekeepingModel();
-            model.People = new SelectList(db.Persons.ToList(), "PersonID", "FirstName");
-            model.People = new SelectList(db.Persons.ToList(), "ChoreID", "Chore");
-            model.People = new SelectList(db.Persons.ToList(), "DayID", "Day");
+            model.People = new SelectList(db.Tasks.ToList(), "PersonID", "FirstName");
+            //model.People = new SelectList(db.Persons.ToList(), "ChoreID", "Chore");
+            //model.People = new SelectList(db.Persons.ToList(), "DayID", "Day");
 
 
             return View(model);
@@ -50,7 +50,7 @@ namespace SimpleCRUD2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.Persons.Find(id);
+            Task person = db.Tasks.Find(id);
             if (person == null)
             {
                 return HttpNotFound();
@@ -71,11 +71,11 @@ namespace SimpleCRUD2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FirstName, Chore, Day")] Person person)
+        public ActionResult Create([Bind(Include = "FirstName, Chore, Day")] Task person)
         {
             if (ModelState.IsValid)
             {
-                db.Persons.Add(person);
+                db.Tasks.Add(person);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -90,8 +90,8 @@ namespace SimpleCRUD2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.Persons.Find(id);
-            if (person == null)
+            person = db.Tasks.Find(id);
+            if (task == null)
             {
                 return HttpNotFound();
             }
@@ -103,7 +103,7 @@ namespace SimpleCRUD2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PersonID,FirstName")] Person person)
+        public ActionResult Edit([Bind(Include = "PersonID,FirstName")] Task person)
         {
             if (ModelState.IsValid)
             {
@@ -121,7 +121,7 @@ namespace SimpleCRUD2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Person person = db.Persons.Find(id);
+            Task person = db.Tasks.Find(id);
             if (person == null)
             {
                 return HttpNotFound();
@@ -134,8 +134,8 @@ namespace SimpleCRUD2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Person person = db.Persons.Find(id);
-            db.Persons.Remove(person);
+            Task person = db.Tasks.Find(id);
+            db.Tasks.Remove(person);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

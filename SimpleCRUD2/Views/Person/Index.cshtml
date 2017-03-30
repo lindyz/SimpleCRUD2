@@ -6,7 +6,7 @@
 
 <h2>Welcome to the Housekeeping Chores List</h2>
 
-@*@Html.DropDownListFor(m => m.PersonID, Model.People)*@
+@Html.DropDownListFor(m => m.PersonID, Model.People)
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -24,25 +24,46 @@
         <th>
             @Html.DisplayNameFor(model => model.Day)
         </th>
-
         
-
         <th></th>
     </tr>
+    </table>
 
-    @*@foreach (var item in Model.People)
+@*@for (var i = 0; i < Model.FirstName.Count; i++)
+
+    <ul>
+<li>
+    <div>
+        @Html.LabelFor(g => g.FirstName[i], Model.FirstName[i].Person)
+    </div>
+</li>
+    </ul>*@
+    @*foreach(DataRow row in Person.Rows)
     {*@
-   <tr>
+
+
+@*foreach ( DataRow dr in table.Rows )
+{
+    string name = dr["FirstName"].ToString();
+}*@
+
+
+
+
+@*@for ()*@
+<tr>
         <td>
             @Html.DisplayFor(model => model.FirstName)
         </td>
+
        <td>
            @Html.DisplayFor(model => model.Chore)
        </td>
+
        <td>
            @Html.DisplayFor(model => model.Day)
        </td>
-
+    
 
         @*this will give me the ability to edit/delete the person*@
         <td>
@@ -53,4 +74,3 @@
     </tr>
     @*}*@
 
-</table>

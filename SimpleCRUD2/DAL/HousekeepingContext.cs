@@ -11,9 +11,7 @@ namespace SimpleCRUD2.DAL
         {
         }
 
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<Chore> Chores { get; set; }
-        public DbSet<Day> Days { get; set; }
+        public DbSet<Task> Tasks { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
