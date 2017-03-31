@@ -1,1 +1,2 @@
-This app is designed as an input for chores.  Chores are assigned to each person on a specific day of the week.
+SimpleCRUD2 is a housekeeping app that is used to assign chores.  Chores are assigned to a person to be done on a specific day of the week. 
+To use this app the reviewer only needs to download, compile, and run the solution from Visual Studio.
