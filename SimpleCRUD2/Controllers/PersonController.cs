@@ -22,6 +22,7 @@ namespace SimpleCRUD2.Controllers
 
             var model = new HousekeepingModel();
             model.Tasks = db.Tasks.ToList();
+            
             //model.People = new SelectList(db.Persons.ToList(), "ChoreID", "Chore");
             //model.People = new SelectList(db.Persons.ToList(), "DayID", "Day");
 
@@ -72,7 +73,7 @@ namespace SimpleCRUD2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FirstName, Chore, Day")] Task person)
+        public ActionResult Create([Bind(Include = "Name, Chore, Day")] Task person)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +97,14 @@ namespace SimpleCRUD2.Controllers
             {
                 return HttpNotFound();
             }
-            return View();
+            var model = new HousekeepingModel();
+
+            model.TaskID = myTask.TaskID;
+            model.Name = myTask.Name;
+            model.Chore = myTask.Chore;
+            model.Day = myTask.Day;
+
+            return View(model);
         }
 
         // POST: Person/Edit/5
@@ -104,7 +112,7 @@ namespace SimpleCRUD2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PersonID,FirstName")] Task person)
+        public ActionResult Edit([Bind(Include = "TaskID, Name, Chore, Day")] Task person)
         {
             if (ModelState.IsValid)
             {
@@ -127,6 +135,7 @@ namespace SimpleCRUD2.Controllers
             {
                 return HttpNotFound();
             }
+            
             return View(person);
         }
 

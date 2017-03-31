@@ -24,43 +24,53 @@
         <th>
             @Html.DisplayNameFor(model => model.Day)
         </th>
-        
+
         <th></th>
     </tr>
-    </table>
+</table>
 
-<ul>
-@for (var i = 0; i < Model.Tasks.Count(); i++)
-{
-    <li>
-       <div>
-         @Html.LabelFor(g => g.Name[i], Model.Name[i])
-      </div>
-    </li>
-}
-</ul>
+<div>
+    @for (var i = 0; i < Model.Tasks.Count(); i++)
+    {
+        <div class="row">
+            <div class="col-md-4">
+                @Html.ActionLink(Model.Tasks[i].Name, "Edit", "Person", new { id = Model.Tasks[i].TaskID }, null)
+            </div>
+            <div class="col-md-4">
+                @Model.Tasks[i].Chore
+            </div>
+            <div class="col-md-2">
+                @Model.Tasks[i].Day
+            </div>
+            <div class="col-md-1">
+                @Html.ActionLink("X", "Delete", "Person", new { id = Model.Tasks[i].TaskID }, null)
+            </div>
+
+        </div>
+    }
+</div>
 
 
 <tr>
-        <td>
-            @Html.DisplayFor(model => model.Name)
-        </td>
+    <td>
+        @Html.DisplayFor(model => model.Name)
+    </td>
 
-       <td>
-           @Html.DisplayFor(model => model.Chore)
-       </td>
+    <td>
+        @Html.DisplayFor(model => model.Chore)
+    </td>
 
-       <td>
-           @Html.DisplayFor(model => model.Day)
-       </td>
-    
+    <td>
+        @Html.DisplayFor(model => model.Day)
+    </td>
 
-        @*this will give me the ability to edit/delete the person*@
-        <td>
-            @*@Html.ActionLink("Edit", "Edit", new { id = Model.Tasks }) |
+
+    @*this will give me the ability to edit/delete the person*@
+    <td>
+        @*@Html.ActionLink("Edit", "Edit", new { id = Model.Tasks }) |
             @Html.ActionLink("Details", "Details", new { id = Model.Tasks }) |
             @Html.ActionLink("Delete", "Delete", new { id = Model.Tasks })*@
-        </td>
-    </tr>
-    @*}*@
+    </td>
+</tr>
+@*}*@
 

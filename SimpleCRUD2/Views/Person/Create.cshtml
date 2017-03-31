@@ -11,16 +11,17 @@
 {
     @Html.AntiForgeryToken()
 
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
     //creates person - can add people, chores, days
     <div class="form-horizontal">
         <h4>Person</h4>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                 @*@*class="form-control" value="@ViewBag.FirstName"*@
             </div>
         </div>
@@ -28,7 +29,6 @@
         <div class="form-horizontal">
             <h4>Chore</h4>
             <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="form-group">
                 @Html.LabelFor(model => model.Chore, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -40,7 +40,6 @@
             <div class="form-horizontal">
                 <h4>Day of the Week</h4>
                 <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
                     @Html.LabelFor(model => model.Day, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
