@@ -22,10 +22,6 @@ namespace SimpleCRUD2.Controllers
 
             var model = new HousekeepingModel();
             model.Tasks = db.Tasks.ToList();
-            
-            //model.People = new SelectList(db.Persons.ToList(), "ChoreID", "Chore");
-            //model.People = new SelectList(db.Persons.ToList(), "DayID", "Day");
-
 
             return View(model);
         }
@@ -33,10 +29,6 @@ namespace SimpleCRUD2.Controllers
         [HttpPost]
         public ActionResult Add(string FirstName, string Chore, string Day)
         {
-            //string FirstName = Request.Form["FirstName"];
-            //string Chore = Request.Form["Chore"];
-            //string Day = Request.Form["Day"];
-
             ViewBag.FirstName = FirstName;
             ViewBag.Chore = Chore;
             ViewBag.Day = Day;
@@ -123,7 +115,7 @@ namespace SimpleCRUD2.Controllers
             return View(person);
         }
 
-        // GET: Person/Delete/5
+        // GET: Person/Delete/5 - this is to delete the person which deletes the entire row in the database
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -159,14 +151,5 @@ namespace SimpleCRUD2.Controllers
             base.Dispose(disposing);
         }
 
-        //[HttpPost]
-        //public ActionResult Person(HousekeepingModel obj)
-        //{
-
-        //    ViewBag.Msg = "The Family Memeber Named " + obj.FirstName + " is assigned to " + obj.Chore + " on " + obj.Day;
-
-        //    return View();
-
-        //}
     }
 }

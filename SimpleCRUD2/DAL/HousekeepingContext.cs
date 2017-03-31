@@ -15,8 +15,6 @@ namespace SimpleCRUD2.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            //Database.SetInitializer<DbContext>(null);
-            //base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 

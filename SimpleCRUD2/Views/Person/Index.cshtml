@@ -6,12 +6,13 @@
 
 <h2>Welcome to the Housekeeping Chores List</h2>
 
-@*@Html.DropDownListFor(m => m.PersonID, Model.People)*@
+@*@Html.DropDownListFor(m => m.PersonID, Model.People) - I was going to use a drop down list but decided against it, I might add it back in to a later version so I'm leaving it here*@
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 
+@*Displays the headers*@ 
 
 <table class="table">
     <tr>
@@ -28,6 +29,8 @@
         <th></th>
     </tr>
 </table>
+
+@*loops through the database - edit hyperlink feature & X for delete hyperlink*@
 
 <div>
     @for (var i = 0; i < Model.Tasks.Count(); i++)
@@ -62,14 +65,6 @@
 
     <td>
         @Html.DisplayFor(model => model.Day)
-    </td>
-
-
-    @*this will give me the ability to edit/delete the person*@
-    <td>
-        @*@Html.ActionLink("Edit", "Edit", new { id = Model.Tasks }) |
-            @Html.ActionLink("Details", "Details", new { id = Model.Tasks }) |
-            @Html.ActionLink("Delete", "Delete", new { id = Model.Tasks })*@
     </td>
 </tr>
 @*}*@

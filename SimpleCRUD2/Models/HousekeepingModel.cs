@@ -21,7 +21,7 @@ namespace SimpleCRUD2.Models
         [Required(ErrorMessage = "Chore Type is Required.")]
         public string Chore { get; set; }
 
-        //[Required(ErrorMessage = "Room is Required.")]
+        //[Required(ErrorMessage = "Room is Required.")] might add this back in on a later version so I'm leaving it here to remind me
         //public string Room { get; set; }
 
         public string Day { get; set; }
